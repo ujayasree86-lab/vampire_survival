@@ -1,0 +1,31 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>Voxel Survival Pro</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div id="shop-sidebar">
+        <h3>ARCADE SHOP</h3>
+        <button onclick="buy('gun', 100)">Buy Pistol (100G)</button>
+        <button onclick="buy('atk', 60)">Fire Rate (60G)</button>
+        <button onclick="buy('spd', 50)">Speed Boost (50G)</button>
+        <button onclick="buy('katana', 200)">Katana (200G)</button>
+        <div id="controls-hint">WASD: Move | F: Punch | Y: Shoot</div>
+    </div>
+
+    <canvas id="gameCanvas"></canvas>
+
+    <div id="ui-layer">
+        <div class="stat-header">game Canvas</div>
+        <div class="stat-gold-label">Gold</div>
+        <div class="stat-box">Wave count <span id="wave-count">1</span></div>
+        <div class="stat-gold-label" style="margin-top:10px">Golds</div>
+        <div class="stat-box"><span id="gold-total">0</span></div>
+        <div class="stat-box" style="margin-top:20px">HP: <span id="hp">100</span></div>
+        <div id="hp-bar-container"><div id="hp-fill"></div></div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
