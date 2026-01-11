@@ -1,51 +1,43 @@
-* { box-sizing: border-box; }
-
+* { box-sizing: border-box; user-select: none; }
 body, html {
     margin: 0; padding: 0;
     width: 100vw; height: 100vh;
-    overflow: hidden; /* Stops scrolling */
-    background: #f0f0f0;
-    font-family: 'Segoe UI', Arial, sans-serif;
-    display: flex;
+    overflow: hidden; background: #e0e0e0;
+    font-family: 'Segoe UI', sans-serif; display: flex;
+}
+
+#start-screen {
+    position: absolute; top: 0; left: 0; width: 100%; height: 100%;
+    background: rgba(0,0,0,0.9); display: flex; align-items: center; justify-content: center;
+    z-index: 100; color: white; text-align: center;
+}
+
+.menu-content h1 { font-size: 48px; color: #5dade2; text-shadow: 2px 2px #2e86c1; }
+.menu-content button {
+    display: block; width: 250px; margin: 12px auto; padding: 15px;
+    font-weight: bold; cursor: pointer; border: none; border-radius: 8px;
+    background: #3498db; color: white; transition: 0.2s;
 }
 
 #shop-sidebar {
-    width: 220px; height: 100vh;
-    background: #ffffff; border-right: 1px solid #ccc;
-    padding: 20px; display: flex; flex-direction: column;
-    flex-shrink: 0;
+    width: 220px; height: 100vh; background: #fff; border-right: 3px solid #bdc3c7;
+    padding: 20px; display: flex; flex-direction: column; flex-shrink: 0; z-index: 10;
 }
 
-#shop-sidebar h3 { font-size: 18px; color: #333; margin: 0 0 15px 0; }
-
+#shop-sidebar h3 { font-size: 16px; margin: 10px 0 5px 0; color: #333; }
 #shop-sidebar button {
-    margin-bottom: 10px; padding: 12px; font-weight: bold;
-    background: #5dade2; color: white; border: none;
-    border-radius: 6px; cursor: pointer; transition: 0.2s;
+    margin-bottom: 5px; padding: 10px; font-weight: bold;
+    background: #5dade2; color: white; border: none; border-radius: 5px; cursor: pointer;
+    font-size: 11px; text-align: left;
 }
 
-#shop-sidebar button:hover { background: #2e86c1; }
+#shop-sidebar button:hover { background: #3498db; }
 
-#controls-hint {
-    margin-top: auto; font-size: 11px; color: #999;
-    line-height: 1.6; border-top: 1px solid #eee; padding-top: 10px;
-}
+canvas { flex-grow: 1; cursor: crosshair; background: #ecf0f1; }
 
-canvas { flex-grow: 1; height: 100vh; background: #f0f0f0; }
-
-#ui-layer {
-    position: absolute; top: 20px; right: 30px;
-    text-align: right; pointer-events: none; color: #444;
-}
-
-.stat-header { font-size: 26px; font-weight: bold; }
-.stat-sub { font-size: 15px; font-weight: bold; margin: 5px 0; }
-.stat-box { font-size: 14px; font-weight: bold; }
-
-#xp-bar-container, #hp-bar-container {
-    width: 180px; height: 10px; background: #e0e0e0;
-    border-radius: 5px; overflow: hidden; margin-left: auto; margin-top: 5px;
-}
-
+#ui-layer { position: absolute; top: 25px; right: 40px; text-align: right; pointer-events: none; }
+.stat-header { font-size: 28px; font-weight: bold; color: #2c3e50; }
+.stat-gold-label { color: #f1c40f; font-weight: bold; font-size: 14px; }
+#hp-bar-container { width: 200px; height: 12px; background: #bdc3c7; border-radius: 6px; overflow: hidden; margin-top: 8px; border: 1px solid #7f8c8d; }
 #hp-fill { width: 100%; height: 100%; background: #e74c3c; transition: 0.3s; }
-#xp-fill { width: 0%; height: 100%; background: #5dade2; transition: 0.3s; }
+hr { border: 0; border-top: 1px solid #eee; margin: 10px 0; }
