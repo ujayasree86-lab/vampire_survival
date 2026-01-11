@@ -2,30 +2,60 @@
 <html lang="en">
 <head>
     <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Voxel Survival Pro</title>
     <link rel="stylesheet" href="style.css">
 </head>
 <body>
+
+    <div id="start-screen">
+        <div class="menu-content">
+            <h1>VOXEL SURVIVAL</h1>
+            <p>CHOOSE DIFFICULTY</p>
+            <button onclick="startGame('easy')">EASY</button>
+            <button onclick="startGame('medium')">MEDIUM</button>
+            <button onclick="startGame('hard')">HARD</button>
+        </div>
+    </div>
+
     <div id="shop-sidebar">
-        <h3>ARCADE SHOP</h3>
-        <button onclick="buy('gun', 100)">Buy Pistol (100G)</button>
-        <button onclick="buy('atk', 60)">Fire Rate (60G)</button>
-        <button onclick="buy('spd', 50)">Speed Boost (50G)</button>
-        <button onclick="buy('katana', 200)">Katana (200G)</button>
-        <div id="controls-hint">WASD: Move | F: Punch | Y: Shoot</div>
+        <h3>GUN SHOP</h3>
+        <p>💰 <span id="gold-side">0</span></p>
+        <button id="btn-pistol" onclick="buy('pistol', 50)">Pistol (50G)</button>
+        <button id="btn-shotgun" onclick="buy('shotgun', 150)">Shotgun (150G)</button>
+        <button id="btn-smg" onclick="buy('smg', 300)">SMG (300G)</button>
+        <button id="btn-mg" onclick="buy('mg', 450)">Machine Gun (450G)</button>
+        <button id="btn-sniper" onclick="buy('sniper', 600)">Sniper (600G)</button>
+        
+        <hr>
+        <h3>AMMO SHOP</h3>
+        <button onclick="buyAmmo(25, 10)">+25 Ammo (10G)</button>
+        <button onclick="buyAmmo(50, 18)">+50 Ammo (18G)</button>
+        <button onclick="buyAmmo(100, 30)">+100 Ammo (30G)</button>
+
+        <hr>
+        <h3>UPGRADES</h3>
+        <button onclick="buy('spd', 80)">+ Speed (80G)</button>
+        <button onclick="buy('fr', 100)">+ Fire Rate (100G)</button>
+        <button onclick="buy('heal', 40)">Heal 50HP (40G)</button>
+        
+        <div id="controls-hint">
+            WASD: Move | <b>F: MEGA PUNCH</b><br>
+            HOLD CLICK: Shoot<br>
+            <span id="ammo-display" style="font-size:18px; color:orange; font-weight:bold;">Ammo: --</span>
+        </div>
     </div>
 
     <canvas id="gameCanvas"></canvas>
 
     <div id="ui-layer">
-        <div class="stat-header">game Canvas</div>
-        <div class="stat-gold-label">Gold</div>
-        <div class="stat-box">Wave count <span id="wave-count">1</span></div>
-        <div class="stat-gold-label" style="margin-top:10px">Golds</div>
+        <div class="stat-header">Voxel Survival</div>
+        <div class="stat-gold-label">Total Gold</div>
         <div class="stat-box"><span id="gold-total">0</span></div>
-        <div class="stat-box" style="margin-top:20px">HP: <span id="hp">100</span></div>
+        <div class="stat-box" style="margin-top:20px;">HP: <span id="hp">100</span></div>
         <div id="hp-bar-container"><div id="hp-fill"></div></div>
     </div>
+
     <script src="script.js"></script>
 </body>
 </html>
